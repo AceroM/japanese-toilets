@@ -5193,13 +5193,6 @@ gatsby-remark-prismjs@^3.2.6:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.3.0"
 
-gatsby-remark-video@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-video/-/gatsby-remark-video-1.2.1.tgz#38219181fd02b634ccf18adebf4d7f46b7e56cf6"
-  integrity sha512-izzlpaLxP+0Cf4921K77JT2xm4v4vPi1W7ZE2cWZheX9iWiyOj78/RzrNq9sOmCNLUmgkYK8lwspmes6t6vTcQ==
-  dependencies:
-    unist-util-visit "^1.4.0"
-
 gatsby-source-filesystem@^2.0.27:
   version "2.0.32"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.32.tgz#c39e8bd25e11da5e47fa921c2f050018854fe23a"
@@ -12370,7 +12363,7 @@ unist-util-visit-parents@^2.0.0:
   dependencies:
     unist-util-is "^2.1.2"
 
-unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.3, unist-util-visit@^1.3.0, unist-util-visit@^1.4.0:
+unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.3, unist-util-visit@^1.3.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.0.tgz#1cb763647186dc26f5e1df5db6bd1e48b3cc2fb1"
   integrity sha512-FiGu34ziNsZA3ZUteZxSFaczIjGmksfSgdKqBfOejrrfzyUy5b7YrlzT1Bcvi+djkYDituJDy2XB7tGTeBieKw==
