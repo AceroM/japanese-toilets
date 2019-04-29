@@ -1,15 +1,15 @@
 {
-  "url": "https://calpa.me",
+  "url": "http://japanese-toilets.netlify.com/",
   "meta": {
-    "favicon": "https://i.imgur.com/PO9Y4fT.jpg",
-    "keyword": "calpa, blog, JavaScript",
-    "description": "Calpa 的技術博客，開發日常，以及遇到的坑",
+    "favicon": "https://pottywipe.com/wp-content/uploads/pottywipe-favicon-300x300.png",
+    "keyword": "blog, JavaScript",
+    "description": "Blog project for Japanese 302",
     "theme_color": "#384f7c",
     "google_site_verification": "riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io"
   },
-  "name": "calpa",
+  "name": "ミゲル アセロ",
   "about": "/2018/05/01/about-calpa-liu/",
-  "email": "calpaliu@gmail.com",
+  "email": "miguelacero528@gmail.com",
   "stats": {
     "image": "https://i.imgur.com/VjBWiSt.png",
     "title": "過去三十日數據",
@@ -28,32 +28,12 @@
   "License": "by",
   "friends": [
     {
-      "href": "https://www.boatsky.com/",
-      "title": "太空船博客"
-    },
-    {
-      "href": "http://blog.shanamaid.top/",
-      "title": "娜酱骑士团"
-    },
-    {
-      "href": "https://clarencec.github.io/",
-      "title": "Clarence Blog"
-    },
-    {
-      "href": "http://f2ex.cn/",
-      "title": "F2EX"
-    },
-    {
-      "href": "https://jeffjade.com/",
-      "title": "晚晴幽草轩"
-    },
-    {
-      "href": "https://macplay.github.io/",
-      "title": "MacPlay"
+      "href": "https://taiko.bui.pm/",
+      "title": "Online Taikoooo"
     }
   ],
-  "iconUrl": "https://i.imgur.com/kjt2x52.jpg",
-  "wordings": ["GatsbyJS, ReactJS", "全週期開發者"],
+  "iconUrl": "https://i.imgur.com/w0Y7VzX.jpg",
+  "wordings": ["ケツを食べる", "wwwwwwwww"],
   "gaTrackId": "UA-84737574-3",
   "navbarList": [
     {
@@ -70,7 +50,7 @@
     },
     {
       "href": "/2018/05/01/about-calpa-liu/",
-      "title": "關於作者"
+      "title": "About"
     }
   ],
   "redirectors": [
@@ -87,7 +67,7 @@
     }
   ],
   "zhihuUsername": "piao-xue-wu-ying",
-  "githubUsername": "calpa",
+  "githubUsername": "AceroM",
   "maxPostsInPage": 10,
   "facebook": "calpablog"
 }

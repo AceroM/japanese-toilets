@@ -12,11 +12,9 @@ import './index.scss';
 const {
   wordings = [],
   githubUsername,
-  zhihuUsername,
   email,
   iconUrl,
   about,
-  facebook,
 } = config;
 
 const Icon = ({ href, icon }) => (
@@ -37,22 +35,15 @@ const Sidebar = ({ totalCount, latestPosts }) => (
     <div className="about-me">
       <Link to={about} href={about} className="name">
         <img className="avatar" src={iconUrl} alt="Calpa" />
-        <h4>Calpa</h4>
+        <h4>ミゲル</h4>
       </Link>
       <p className="mb-1">{wordings[0]}</p>
       <p className="mb-3">{wordings[1]}</p>
-      <Icon
-        href={`https://www.zhihu.com/people/${zhihuUsername}`}
-        icon={['fab', 'zhihu']}
-      />
       <Icon
         href={`https://github.com/${githubUsername}`}
         icon={['fab', 'github']}
       />
       <Icon href={`mailto:${email}`} icon={['far', 'envelope']} />
-      {facebook
-        && <Icon href={`https://www.facebook.com/${facebook}/`} icon={['fab', 'facebook']} />
-      }
       <Information totalCount={totalCount} posts={latestPosts} />
     </div>
   </header>

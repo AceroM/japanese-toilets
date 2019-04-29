@@ -89,7 +89,7 @@ class BlogPost extends Component {
           <div id="gitalk-container" />
         </div>
 
-        <ShareBox url={slug} />
+        <ShareBox />
 
         <SEO
           title={title}

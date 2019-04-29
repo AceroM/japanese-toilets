@@ -15,33 +15,18 @@ const CommentButton = () => (
       paddingLeft: '0.15rem',
     }}
     href="#gitalk-container"
-    onClick={() =>
-      ReactGA.event({
-        category: 'User',
-        action: 'Goto Comment Box',
-      })
+    onClick={() => ReactGA.event({
+      category: 'User',
+      action: 'Goto Comment Box',
+    })
     }
   >
     <FontAwesomeIcon icon={['far', 'comment']} />
   </a>
 );
 
-const ShareBox = ({ url, hasCommentBox }) => (
+const ShareBox = ({ hasCommentBox }) => (
   <div className="m-share-box">
-    <a
-      href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
-      title=""
-      className="share-button"
-      onClick={() =>
-        ReactGA.event({
-          category: 'Share',
-          action: 'Facebook Share',
-        })
-      }
-    >
-      <FontAwesomeIcon icon={['fab', 'facebook-f']} />
-    </a>
-
     {/* 視覺置中 => 稍微往上偏移 */}
     {hasCommentBox && <CommentButton />}
 
@@ -65,7 +50,6 @@ const ShareBox = ({ url, hasCommentBox }) => (
 );
 
 ShareBox.propTypes = {
-  url: PropTypes.string.isRequired,
   hasCommentBox: PropTypes.bool,
 };
 

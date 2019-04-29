@@ -1,10 +1,10 @@
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    title: 'Calpa&apos;s Blog',
-    description: 'Front End Technical Blog - Calpa',
-    siteUrl: 'https://calpa.me',
-    author: 'Calpa',
+    title: 'Miguel\'s Blog',
+    description: 'Japanese Blog - Miguel',
+    siteUrl: 'http://japanese-toilets.netlify.com',
+    author: 'Miguel',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -16,6 +16,16 @@ module.exports = {
       options: {
         path: `${__dirname}/src/content`,
         name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-remark-video',
+      options: {
+        width: 800,
+        height: 'auto',
+        preload: 'auto',
+        muted: true,
+        autoplay: true,
       },
     },
     {
