@@ -16,7 +16,6 @@ If you like this project, please don't hesitate to star it. Thank you.
 1. Web App Manifest
 1. Page pagination
 1. Netlify optimization
-1. Awesome comment component (powered by [Gitalk](https://github.com/gitalk/gitalk))
 1. Search Engine Optimization
 1. Parse Markdown in high speed (powered by [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/))
 1. Support to sitemap
@@ -154,21 +153,6 @@ redirectors: [
   },
 ],
 ```
-
-Gitalk plugin configuration
-
-```JavaScript
-gitalk: {
-    clientID: '18255f031b5e11edd98a',
-    clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
-    repo: 'calpa.github.io',
-    owner: 'calpa',
-    admin: ['calpa'],
-    distractionFreeMode: true,
-  },
-}
-```
-
 ## Deploy
 
 [Calpa's blog](https://calpa.me) is currently using Netlify, though, you may use Github Pages as an alternative.

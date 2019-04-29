@@ -50,7 +50,7 @@ const Card = ({
           </Link>
           <p>{description}</p>
           <Link to={url} href={url}>
-            ....繼續閱讀全文內容
+            ....Read More
           </Link>
         </div>
       </div>
