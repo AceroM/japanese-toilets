@@ -8,7 +8,7 @@
     "google_site_verification": "riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io"
   },
   "name": "ミゲル アセロ",
-  "about": "/2018/05/01/about-calpa-liu/",
+  "about": "/about-miguel/",
   "email": "miguelacero528@gmail.com",
   "stats": {
     "image": "https://i.imgur.com/VjBWiSt.png",
@@ -42,7 +42,7 @@
   ],
   "redirectors": [
     {
-      "toPath": "/2018/05/01/about-calpa-liu/",
+      "toPath": "/about-miguel/",
       "fromPath": "/about/"
     }
   ],

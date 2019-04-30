@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './index.scss';
 
-const CommentButton = () => (
+const CommentButton = ({ handleClick }) => (
   <a
     className="share-button"
     style={{
@@ -15,20 +15,15 @@ const CommentButton = () => (
       paddingLeft: '0.15rem',
     }}
     href="#comments"
-    onClick={() => ReactGA.event({
-      category: 'User',
-      action: 'Goto Comment Box',
-    })
-    }
+    onClick={handleClick}
   >
     <FontAwesomeIcon icon={['far', 'comment']} />
   </a>
 );
 
-const ShareBox = ({ hasCommentBox }) => (
+const ShareBox = ({ hasCommentBox, handleClick }) => (
   <div className="m-share-box">
-    {/* 視覺置中 => 稍微往上偏移 */}
-    {hasCommentBox && <CommentButton />}
+    {hasCommentBox && <CommentButton handleClick={handleClick} />}
 
     <a
       className="share-button"
@@ -51,6 +46,7 @@ const ShareBox = ({ hasCommentBox }) => (
 
 ShareBox.propTypes = {
   hasCommentBox: PropTypes.bool,
+  handleClick: PropTypes.func.isRequired,
 };
 
 ShareBox.defaultProps = {

@@ -14,6 +14,7 @@ import SEO from '../components/SEO';
 import Header from '../components/Header';
 // import TableOfContent from '../components/TableOfContent';
 import ShareBox from '../components/ShareBox';
+import Lmao from '../components/Lmao';
 
 import { config } from '../../data';
 
@@ -32,9 +33,19 @@ class BlogPost extends Component {
   constructor(props) {
     super(props);
     this.data = this.props.data;
+    this.state = {
+      isLmao: false
+    }
   }
 
   componentDidMount() {
+  }
+
+  setLmao = e => {
+    e.preventDefault();
+    const { isLmao } = this.state;
+    this.setState({ isLmao: !isLmao })
+    console.log(this.state);
   }
 
   render() {
@@ -74,7 +85,7 @@ class BlogPost extends Component {
           <DiscussionEmbed id="comments" shortname={disqusShortname} config={disqusConfig} />
         </div>
 
-        <ShareBox />
+        <ShareBox hasCommentBox handleClick={this.setLmao} />
 
         <SEO
           title={title}
