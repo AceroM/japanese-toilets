@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { config } from '../../data';
+import parseKanji from './parseKanjiLol';
 
 const { maxPostsInPage } = config;
 
@@ -43,4 +44,5 @@ export {
   parseChineseDate,
   getPath,
   getPageNumber,
+  parseKanji,
 };

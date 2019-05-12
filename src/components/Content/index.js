@@ -14,6 +14,8 @@ class Content extends Component {
   componentDidMount() {
     // lazy loads elements with default selector as '.lozad'
     // Prevent WebPack build fail
+    // console.log('this.props.post');
+    // console.log(this.props.post);
     if (isBrowser()) {
       // Initialize library
       const observer = lozad('.lozad', {
@@ -34,6 +36,7 @@ class Content extends Component {
 
   render() {
     const { post } = this.props;
+    console.log(post);
     return (
       <div
         // eslint-disable-next-line react/no-danger

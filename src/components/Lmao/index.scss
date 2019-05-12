@@ -1,5 +1,10 @@
 @import "../../styles/colors.scss";
 
 .lmao {
-  width: 200%; 
+  position: fixed;
+  z-index: 100;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
 }

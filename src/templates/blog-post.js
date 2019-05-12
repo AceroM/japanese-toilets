@@ -3,6 +3,7 @@
 
 // Components
 import React, { Component } from 'react';
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import { graphql } from 'gatsby';
 
 import { parseChineseDate } from '../api';
@@ -10,6 +11,7 @@ import { parseChineseDate } from '../api';
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
 import SEO from '../components/SEO';
+import Element from '../components/Element';
 
 import Header from '../components/Header';
 // import TableOfContent from '../components/TableOfContent';
@@ -19,6 +21,7 @@ import Lmao from '../components/Lmao';
 import { config } from '../../data';
 
 // Styles
+import './Parallax.scss';
 import './blog-post.scss';
 
 const { name, iconUrl } = config;
@@ -34,17 +37,19 @@ class BlogPost extends Component {
     super(props);
     this.data = this.props.data;
     this.state = {
-      isLmao: false
-    }
+      isLmao: false,
+    };
+
+    this.setLmao = this.setLmao.bind(this);
   }
 
   componentDidMount() {
   }
 
-  setLmao = e => {
+  setLmao(e) {
     e.preventDefault();
     const { isLmao } = this.state;
-    this.setState({ isLmao: !isLmao })
+    this.setState({ isLmao: !isLmao });
     console.log(this.state);
   }
 
@@ -67,35 +72,69 @@ class BlogPost extends Component {
       title,
     };
 
+    const { isLmao } = this.state;
+    const elements = new Array(69).fill(null).map((x, i) => i);
+    const offset = 50;
+
     return (
-      <div className="row post order-2">
-        <Header
-          img={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
-          title={title}
-          authorName={name}
-          authorImage={iconUrl}
-          subTitle={parseChineseDate(date)}
-        />
-        <Sidebar />
-        <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
-          <Content post={html} />
-          <div className="m-message" style={bgWhite}>
-            Comment Below
-          </div>
-          <DiscussionEmbed id="comments" shortname={disqusShortname} config={disqusConfig} />
+      <ParallaxProvider className="parallax-div" scrollAxis="vertical">
+        {isLmao && (
+          <Lmao />
+        )}
+        <div className="elements">
+          {elements.map((_, i) => {
+            const even = i % 2 === 0;
+            const props = {
+              x: [
+                even ? `${offset}%` : `${-offset}%`,
+                even ? `${-offset}%` : `${offset}%`,
+              ],
+              y: [
+                even ? `${offset}%` : `${-offset}%`,
+                even ? `${-offset}%` : `${offset}%`,
+              ],
+            };
+
+            return (
+              <Parallax className="small" {...props}>
+                <Element name={i} />
+              </Parallax>
+            );
+          })}
         </div>
+        <div className="row post order-2">
+          <Header
+            img={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
+            title={title}
+            authorName={name}
+            authorImage={iconUrl}
+            subTitle={parseChineseDate(date)}
+          />
+          <Sidebar />
+          <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
+            <Content post={html} />
+            <div className="m-message" style={bgWhite}>
+              Comment Below
+            </div>
+            <DiscussionEmbed
+              id="comments"
+              shortname={disqusShortname}
+              config={disqusConfig}
+            />
+          </div>
 
-        <ShareBox hasCommentBox handleClick={this.setLmao} />
+          <ShareBox hasCommentBox handleClick={this.setLmao} />
 
-        <SEO
-          title={title}
-          url={slug}
-          siteTitleAlt="Miguel's blog"
-          isPost={false}
-          description={excerpt}
-          image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
-        />
-      </div>
+          <SEO
+            title={title}
+            url={slug}
+            siteTitleAlt="Miguel's blog"
+            isPost={false}
+            description={excerpt}
+            image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
+          />
+        </div>
+      </ParallaxProvider>
     );
   }
 }

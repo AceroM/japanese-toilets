@@ -40,7 +40,7 @@ const Page = ({ pageContext, location }) => {
   const nextUrl = `/${pathPrefix}/${index + 1}`;
 
   return (
-    <React.Fragment>
+    <>
       <div
         className="row homepage"
         style={{
@@ -71,7 +71,7 @@ const Page = ({ pageContext, location }) => {
         <div className="col-xl-2 col-lg-1 order-3" />
       </div>
       <ShareBox url={location.href} hasCommentBox={false} />
-    </React.Fragment>
+    </>
   );
 };
 
