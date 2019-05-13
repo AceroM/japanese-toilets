@@ -3,8 +3,12 @@
 
 // Components
 import React, { Component } from 'react';
+import Sound from 'react-sound';
+
+
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import { graphql } from 'gatsby';
+import weeb from './renai.mp3';
 
 import { parseChineseDate } from '../api';
 
@@ -38,6 +42,7 @@ class BlogPost extends Component {
     this.data = this.props.data;
     this.state = {
       isLmao: false,
+      isSound: false,
     };
 
     this.setLmao = this.setLmao.bind(this);
@@ -48,8 +53,8 @@ class BlogPost extends Component {
 
   setLmao(e) {
     e.preventDefault();
-    const { isLmao } = this.state;
-    this.setState({ isLmao: !isLmao });
+    const { isLmao, isSound } = this.state;
+    this.setState({ isLmao: !isLmao, isSound: !isSound });
     console.log(this.state);
   }
 
@@ -72,15 +77,23 @@ class BlogPost extends Component {
       title,
     };
 
-    const { isLmao } = this.state;
+    const { isLmao, isSound } = this.state;
     const elements = new Array(69).fill(null).map((x, i) => i);
     const offset = 50;
 
     return (
       <ParallaxProvider className="parallax-div" scrollAxis="vertical">
-        {isLmao && (
-          <Lmao />
-        )}
+        <Sound
+          url={weeb}
+          playStatus={isSound ? Sound.status.PLAYING : Sound.status.STOPPED}
+          playFromPosition={0}
+          autoLoad
+          volume={69}
+          // onLoading={this.handleSongLoading}
+          // onPlaying={this.handleSongPlaying}
+          // onFinishedPlaying={this.handleSongFinishedPlaying}
+        />
+        {isLmao && <Lmao />}
         <div className="elements">
           {elements.map((_, i) => {
             const even = i % 2 === 0;
