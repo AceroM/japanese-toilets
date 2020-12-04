@@ -45,7 +45,7 @@
     "gatsby-source-filesystem": "^2.0.27",
     "gatsby-transformer-remark": "^2.3.12",
     "han-css": "^3.3.0",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "^10.4.1",
     "lozad": "^1.6.0",
     "md5": "^2.2.1",
     "node-sass": "^4.9.3",
